@@ -1,78 +1,101 @@
-# Linear Regression Practicals
+# Machine Learning Algorithms Practicals
 
-This directory contains complete, hands-on implementations and practical notebooks for **Linear Regression**, covering fundamental concepts, mathematics, assumptions, diagnostics, and real-world datasets.
-
----
-
-## 📑 Contents
-
-| File | Description | Dataset Source | Target Variable |
-| :--- | :--- | :--- | :--- |
-| `Linear_Regression_Real_World_Practical.ipynb` | Comprehensive real-world Multiple Linear Regression with full EDA, assumptions checking, and evaluation | California Housing | `MedHouseVal` |
-| `insurance.ipynb` | Medical insurance cost prediction with categorical feature encoding and multi-feature regression | `insurance.csv` | `charges` |
-| `house_pricing_boston.ipynb` | Simple linear regression baseline exploring study hours vs. exam score relationship | Embedded | `Exam_score` |
-| `heart.ipynb` | Exploratory data analysis, correlation diagnostics, and clinical metrics modeling | `heart.csv` | Clinical features |
-| `insurance.csv` | Medical insurance records (1,338 samples, 7 features) | Kaggle | N/A |
-| `heart.csv` | Cardiovascular disease diagnostic dataset (918 samples, 12 features) | Kaggle / UCI | N/A |
+A comprehensive, organized collection of hands-on Machine Learning algorithm practicals, Jupyter notebooks, datasets, and implementations.
 
 ---
 
-## 🧠 Theory & Mathematical Foundations
+## 📁 Repository Structure
 
-### 1. Simple Linear Regression
-Simple Linear Regression models the relationship between a single independent variable $X$ and a dependent variable $Y$:
-$$Y = \beta_0 + \beta_1 X + \varepsilon$$
-
-Where:
-- $\beta_0$: Intercept (value of $Y$ when $X = 0$)
-- $\beta_1$: Slope coefficient (change in $Y$ per unit change in $X$)
-- $\varepsilon$: Error term ($\varepsilon \sim \mathcal{N}(0, \sigma^2)$)
-
-### 2. Multiple Linear Regression
-Models the relationship between multiple features $X_1, X_2, \dots, X_p$ and target $Y$:
-$$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p + \varepsilon = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$$
-
-### 3. Cost Function: Mean Squared Error (MSE)
-We seek coefficients $\boldsymbol{\beta}$ that minimize the sum of squared residuals:
-$$J(\boldsymbol{\beta}) = \frac{1}{n} \sum_{i=1}^{n} \left(y_i - \hat{y}_i\right)^2 = \frac{1}{n} \|\mathbf{y} - \mathbf{X}\boldsymbol{\beta}\|^2$$
-
-### 4. Closed-Form Solution: Normal Equation (OLS)
-Setting $\nabla_{\boldsymbol{\beta}} J(\boldsymbol{\beta}) = 0$ yields:
-$$\boldsymbol{\beta} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$$
-
----
-
-## 🔍 Key Assumptions of Linear Regression
-
-1. **Linearity**: The relationship between features and the target variable is linear.
-2. **Independence**: Observations are independent of each other (no autocorrelation in residuals).
-3. **Homoscedasticity**: The residuals have constant variance across all levels of the independent variables.
-4. **Normality of Residuals**: The residual errors $\varepsilon$ are normally distributed.
-5. **No Multicollinearity**: Independent variables are not highly correlated with each other ($VIF < 5$).
-
----
-
-## 📊 Evaluation Metrics
-
-- **Mean Absolute Error (MAE)**:
-  $$\text{MAE} = \frac{1}{n} \sum_{i=1}^n |y_i - \hat{y}_i|$$
-- **Mean Squared Error (MSE)**:
-  $$\text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
-- **Root Mean Squared Error (RMSE)**:
-  $$\text{RMSE} = \sqrt{\text{MSE}}$$
-- **Coefficient of Determination ($R^2$ Score)**:
-  $$R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$$
+```text
+machine-learning-algorithms-practicals/
+│
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── .gitignore
+│
+├── 01-regression/
+│   ├── linear-regression/
+│   ├── ridge-regression/
+│   ├── lasso-regression/
+│   └── polynomial-regression/
+│
+├── 02-classification/
+│   ├── logistic-regression/
+│   ├── knn/
+│   ├── naive-bayes/
+│   ├── svm/
+│   ├── decision-tree/
+│   ├── random-forest/
+│   └── gradient-boosting/
+│
+├── 03-unsupervised-learning/
+│   ├── k-means/
+│   ├── hierarchical-clustering/
+│   └── dbscan/
+│
+├── 04-dimensionality-reduction/
+│   └── pca/
+│
+└── images/
+```
 
 ---
 
-## 🚀 How to Run the Notebooks
+## 📅 Roadmap & Algorithm Modules
 
-1. Ensure the parent repository's dependencies are installed:
+| # | Category | Algorithm | Status |
+| :-: | :--- | :--- | :-: |
+| **01** | **Regression** | **Linear Regression** | ✅ Completed |
+| 02 | Regression | Ridge Regression | 📝 In Progress |
+| 03 | Regression | Lasso Regression | 📝 In Progress |
+| 04 | Regression | Polynomial Regression | 📝 In Progress |
+| 05 | Classification | Logistic Regression | 📝 In Progress |
+| 06 | Classification | K-Nearest Neighbors (KNN) | 📝 In Progress |
+| 07 | Classification | Naive Bayes | 📝 In Progress |
+| 08 | Classification | Support Vector Machines (SVM) | 📝 In Progress |
+| 09 | Classification | Decision Trees | 📝 In Progress |
+| 10 | Classification | Random Forest | 📝 In Progress |
+| 11 | Classification | Gradient Boosting | 📝 In Progress |
+| 12 | Unsupervised | K-Means Clustering | 📝 In Progress |
+| 13 | Unsupervised | Hierarchical Clustering | 📝 In Progress |
+| 14 | Unsupervised | DBSCAN | 📝 In Progress |
+| 15 | Dimensionality Reduction | Principal Component Analysis (PCA) | 📝 In Progress |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure Python 3.9+ is installed on your system.
+
+### Installation
+1. Clone the repository:
    ```bash
-   pip install -r ../../requirements.txt
+   git clone https://github.com/preetamvr1595/ml-algorithms-practicals.git
+   cd ml-algorithms-practicals
    ```
-2. Launch Jupyter inside this directory or from the root:
+
+2. (Optional) Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
+
+3. Install required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Launch Jupyter Notebook / JupyterLab:
    ```bash
    jupyter lab
    ```
-3. Open any `.ipynb` notebook and execute cells sequentially.
+
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).

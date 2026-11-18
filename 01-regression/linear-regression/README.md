@@ -76,3 +76,4 @@ $$\boldsymbol{\beta} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$$
    jupyter lab
    ```
 3. Open any `.ipynb` notebook and execute cells sequentially.
+
